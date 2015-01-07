@@ -1,4 +1,4 @@
 eclass
 ======
 
-The E-classroom tool for CPE 309:)
+The E-classroom tool for CPE 309:D
