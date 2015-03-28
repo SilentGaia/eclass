@@ -9,3 +9,5 @@ The E-classroom tool is a electronic implementation of a classroom. Programmed i
 
 More details are outlined here:
 http://users.csc.calpoly.edu/~takong/eclass/requirements/
+
+All source files are located in the implementation folder.
