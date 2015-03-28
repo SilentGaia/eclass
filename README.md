@@ -11,3 +11,5 @@ More details are outlined here:
 http://users.csc.calpoly.edu/~takong/eclass/requirements/
 
 All source files are located in the implementation folder.
+
+NOTE: All files are imported from svn folder that was originally used for this project.
