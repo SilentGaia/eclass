@@ -1,0 +1,283 @@
+package eclasstool.view.roster;
+
+import eclasstool.model.roster.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import javax.swing.*;
+import java.util.*;
+
+public class RosterUI extends JFrame implements Observer 
+{
+    // Main panel containing all the information 
+    private JPanel listContainer;
+
+    // Instance of the model
+    private RosterModel roster;
+
+    // Instance of the importDialog
+    private ImportDialog importBox;
+
+    // Instance of my action listener
+    private MyListener myListener;
+
+    // Different icons to use
+    private final ImageIcon qIcon = 
+        new ImageIcon(getClass().getClassLoader().getResource("eclasstool/view/roster/q.png"));
+    private final ImageIcon attendedIcon = 
+        new ImageIcon(getClass().getClassLoader().getResource("eclasstool/view/roster/gc.png"));
+    private final ImageIcon absentIcon = 
+        new ImageIcon(getClass().getClassLoader().getResource("eclasstool/view/roster/rc.png"));
+
+    /**
+     * Default constructor for the roster gui. 
+     */
+    public RosterUI()
+    {
+        initUI();
+    }
+
+    /**
+     * Initializes the initial roster. 
+     */
+    private void initUI() 
+    {
+        setTitle("Roster");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        listContainer = new JPanel();
+        listContainer.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        listContainer.setOpaque(true);
+        listContainer.setBackground(Color.WHITE);
+
+        listContainer.setLayout(new BoxLayout(listContainer, BoxLayout.Y_AXIS));
+        add(new JScrollPane(listContainer), BorderLayout.CENTER);
+
+        // 309 declarations
+        roster = new RosterModel();
+        roster.addObserver(this);
+        importBox = new ImportDialog(this);
+
+        Scanner rdr = new Scanner(getClass().getClassLoader().getResourceAsStream("eclasstool/view/roster/roster.in"));
+        ArrayList<Student> toImport = new ArrayList<Student>();
+        String studentName = "";
+        while (rdr.hasNextLine())
+        {
+            studentName = rdr.nextLine();
+            toImport.add(new Student(studentName, new AttendanceStatus(), new Privilege()));
+        }
+        Collections.sort(toImport);
+        roster.addStudents(toImport);
+
+        myListener = new MyListener(roster);
+
+        JButton button = new JButton("Import");
+        button.addActionListener(new ActionListener() 
+            {
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    for (Component component: listContainer.getComponents())
+                    {
+                        listContainer.remove(component);
+                    }
+
+                    importBox.showDialog();
+                    roster.addStudents(importBox.getStudentsToImport());
+                    ArrayList<Student> students = importBox.getStudentsToImport();
+                    //Collections.sort(students);
+                    int index = 1;
+                    for (Student currStudent: students)
+                    {
+                        final JPanel newPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+                        newPanel.setOpaque(true);
+                        newPanel.setBackground(Color.WHITE);
+
+                        JButton status = new JButton();
+
+                        int padBytes = 25 - currStudent.getName().length();
+                        StringBuilder builder = new StringBuilder();
+                        while (padBytes-- > 0)
+                        {
+                            builder.append(" ");
+                        }
+                        JLabel nameLabel = new JLabel(currStudent.getName() + builder.toString());
+
+                        status.setBackground(new java.awt.Color(255, 255, 0));
+                        status.setForeground(new java.awt.Color(255, 255, 0));
+                        status.setPreferredSize(new Dimension(28, 26));
+
+                        if (!currStudent.getRosterQ().toString().equals("N/A"))
+                        {
+                            status.setIcon(qIcon);
+                            status.setActionCommand(index + "");
+                            status.addActionListener(myListener);
+                        }   
+                        else if (currStudent.getAttending().getAttended())
+                        {
+                            status.setIcon(attendedIcon);
+                        }
+                        else
+                        {
+                            status.setIcon(absentIcon);
+                        }
+
+                        newPanel.add(status);
+                        newPanel.add(nameLabel);
+
+                        JCheckBox chatCheck = new JCheckBox("Chat");
+                        chatCheck.setActionCommand(index + ":chat");
+                        JCheckBox drawCheck = new JCheckBox("Draw");
+                        drawCheck.setActionCommand(index + ":draw");
+                        JCheckBox assignCheck = new JCheckBox("Assign");
+                        assignCheck.setActionCommand(index + ":assign");
+
+                        chatCheck.addActionListener(myListener);
+                        drawCheck.addActionListener(myListener);
+                        assignCheck.addActionListener(myListener);
+
+                        newPanel.add(Box.createHorizontalStrut(5));
+                        newPanel.add(new JSeparator(SwingConstants.VERTICAL));
+                        newPanel.add(Box.createHorizontalStrut(5));
+                        newPanel.add(chatCheck);
+                        newPanel.add(drawCheck);
+                        newPanel.add(assignCheck);
+
+                        listContainer.add(newPanel);
+
+                        listContainer.revalidate();
+
+                        // Scroll down to last added panel
+                        SwingUtilities.invokeLater(new Runnable() 
+                            {
+                                @Override
+                                public void run() {
+                                    newPanel.scrollRectToVisible(newPanel.getBounds());
+                                }
+                            });
+
+                        index++;
+                    }
+                }
+            });
+
+        repaintRoster();
+        add(button, BorderLayout.PAGE_START);
+        setSize(500, 500);
+        setResizable(false);
+    }
+
+    private void repaintRoster()
+    {
+        for (Component component: listContainer.getComponents())
+        {
+            listContainer.remove(component);
+        }
+
+        int index = 1;
+        for (Student currStudent: roster.getListStudents())
+        {
+            final JPanel newPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+            newPanel.setOpaque(true);
+            newPanel.setBackground(Color.WHITE);
+            newPanel.setPreferredSize(new Dimension(300, 50));
+
+            JButton status = new JButton();
+
+            int padBytes = 25 - currStudent.getName().length();
+            StringBuilder builder = new StringBuilder();
+            while (padBytes-- > 0)
+            {
+                builder.append(" ");
+            }
+            JLabel nameLabel = new JLabel(currStudent.getName() + builder.toString());
+
+            status.setBackground(new java.awt.Color(255, 255, 0));
+            status.setForeground(new java.awt.Color(255, 255, 0));
+            status.setPreferredSize(new Dimension(28, 26));
+
+            if (!currStudent.getRosterQ().toString().equals("N/A"))
+            {
+                status.setIcon(qIcon);
+                status.setActionCommand(index + "");
+                status.addActionListener(myListener);
+            }   
+            else if (currStudent.getAttending().getAttended())
+            {
+                status.setIcon(attendedIcon);
+            }
+            else
+            {
+                status.setIcon(absentIcon);
+            }
+
+            newPanel.add(status);
+            newPanel.add(nameLabel);
+
+            JCheckBox chatCheck = new JCheckBox("Chat");
+            chatCheck.setSelected(currStudent.getPriv(Privilege.kChat));
+            chatCheck.setActionCommand(index + ":chat");
+
+            JCheckBox drawCheck = new JCheckBox("Draw");
+            drawCheck.setSelected(currStudent.getPriv(Privilege.kDraw));
+            drawCheck.setActionCommand(index + ":draw");
+
+            JCheckBox assignCheck = new JCheckBox("Assign");
+            assignCheck.setSelected(currStudent.getPriv(Privilege.kAssign));
+            assignCheck.setActionCommand(index + ":assign");
+
+            chatCheck.addActionListener(myListener);
+            drawCheck.addActionListener(myListener);
+            assignCheck.addActionListener(myListener);
+
+            newPanel.add(chatCheck);
+            newPanel.add(drawCheck);
+            newPanel.add(assignCheck);
+
+            listContainer.add(newPanel);
+            listContainer.revalidate();
+
+            index++;
+        }
+    }
+
+    /**
+     * Standard update method for the roster gui. 
+     */
+    public void update(Observable obs, Object ob)
+    {
+        repaintRoster();
+        RosterQuestion currQ = roster.getQuestion();
+        if (currQ != null && roster.getQReady() && !currQ.getResolved())
+        {      
+            currQ.addObserver(this);
+            QuestionDialog questionDiag = new QuestionDialog(currQ, this);
+            questionDiag.setLocationRelativeTo(this);
+            questionDiag.setVisible(true);
+        }
+    }
+
+    public static void main(String[] args) 
+    {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+        SwingUtilities.invokeLater(new Runnable() 
+            {
+                @Override
+                public void run() {
+                    RosterUI roster = new RosterUI();
+                    roster.initUI();
+                    roster.setVisible(true);
+                }
+            });
+    }
+}

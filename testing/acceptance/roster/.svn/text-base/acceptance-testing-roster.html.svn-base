@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>
+User Acceptance Testing
+</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>CSC 309 User Acceptance Testing</strong>
+</font>
+</p>
+<br>
+<br>
+<h3>
+Acceptance Test Plan For Roster by Eric Tran 
+</h3>
+The acceptance test plan is the login and roster of the E-Class. 
+<p> 
+<blockquote>
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Case No.</strong>
+    <td valign=top><strong>User Inputs and Commands</strong>
+    <td valign=top><strong>Expected Output</strong>
+    <td valign=top><strong>Remarks</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td valign=top><strong>Results</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <tr>
+<tr>
+    <td valign=top>1
+    <td valign=top> 
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 In the E-Class tool, user clicks once on the roster button in the taskbar. 
+    <td valign=top> 
+	 User sees roster interface display on the main E-Class window. Roster is initialized with initial roster of 7. 
+	 Gene Fisher is top of list with green circle right of his name. 
+    <td valign=top> 
+	 Tests user login process and initialization of the roster. 
+    <td valign=top>
+	 Pass. 
+ <tr>
+    <td valign=top>2
+    <td valign=top>
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 Open up roster by clicking on roster button in the taskbar. 
+	 In the roster UI, user clicks on "Import" button positioned at the top. 
+    <td valign=top> 
+	 File chooser dialog pops up allowing for user to import an alternate roster. 
+    <td valign=top>
+	 Tests E-Class feature of importing different rosters. 
+    <td valign=top>
+	 Pass. 
+	  <tr>
+    <td valign=top>3
+    <td valign=top>
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 Open up two process of the E-Class tool connected to the server. Log in as "Gene Fisher" and "password. 
+	 Click on "roster" in taskbar. Log in as "Eric Tran" and "password" in other process. 
+    <td valign=top> 
+	 Roster UI updates with both Gene Fisher and Eric Tran logged in. Both have green circles to the right of their name. 
+    <td valign=top> 
+	 Tests the server communication between rosters of multiple processes. Tests the roster's update process. 
+    <td valign=top>
+	 Pass. 
+ <tr>
+    <td valign=top>4
+    <td valign=top>  
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 Open up two process of the E-Class tool connected to the server. 
+	 Log in as "Gene Fisher" and "password" on one process. 
+	 Click on "roster" in taskbar. Log in as "Eric Tran" and "password" in other process. 
+	 On Fisher's process, click on the "assign" checkbox" of Eric Tran. 
+    <td valign=top> 
+	 Roster of Eric Tran updates with the ability to check other student's checkboxes. 
+    <td valign=top>   
+	 Tests the ability of users to assign other users the ability to assign. 
+    <td valign=top>
+	 Pass. 
+	  <tr>
+    <td valign=top>5
+    <td valign=top>  
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 Log in as "Gene Fisher" and "password" on one process. 
+	 Click on "roster" in taskbar in Fisher's process. 
+	 Log in as "Eric Tran" and "password" in other process. 
+	 Click on "roster" in taskbar in Tran's process. 
+	 On Fisher's process, click on the "assign" checkbox of Eric Tran in roster. 
+	 On Tran's process, click on the "assign" checkbox of Gene Fisher in roster. 
+    <td valign=top> 
+	 Roster of Gene Fisher still have the checkboxes of other student's enabled. 
+    <td valign=top> 
+	 Tests to make sure that instructor's will always have the ability to assign no matter what. 
+    <td valign=top>
+	 Pass. 
+ <tr>
+    <td valign=top>6
+    <td valign=top>  
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 Log in as "Gene Fisher" and "password".
+	 Click on "roster" button in the taskbar.
+	 Click on "roster" button in the taskbar again. 
+    <td valign=top> 
+	 Only one Roster UI displays in E-Class tool main window. 
+    <td valign=top>  
+	 Tests to make sure only one Roster is displayed in the E-Class tool. 
+    <td valign=top>
+	 Pass. 
+	  <tr>
+    <td valign=top>7
+    <td valign=top>
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 Log in as "Gene Fisher" and "password".
+	 Click on "roster" button in the taskbar.
+	 Click on the "x" button at the topright of the roster UI. 
+	 Click on "roster" button in the taskbar again. 
+    <td valign=top> 
+	 Roster closes on the "x" button execution. Same roster opens again on the executon of the roster button. 
+    <td valign=top>  
+	 Tests to make sure only one Roster is displayed in the E-Class tool with the same roster.
+    <td valign=top>
+	 Pass. 
+ <tr>
+
+</table>
+</blockquote>
+</p><p>
+</body>
+</html>

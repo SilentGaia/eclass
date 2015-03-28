@@ -1,0 +1,10 @@
+<html>
+<body>
+
+Classes related to the overall UI for the drawing tools toolbar, and the
+functionality for each individual tool, which include: brush, notes,
+selector, shape, and text tools. Also defined is a class for a generic color
+swatch that is used for all the tools. 
+
+</body>
+</html>

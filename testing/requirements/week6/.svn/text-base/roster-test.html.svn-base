@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<title>
+Inspection Test - roster.html</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>Week 6
+<br>Inspection Test - roster.html
+</strong>
+</font>
+</p>
+<br>
+<br>
+<br>
+<p>
+
+
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Component</strong>
+    <td valign=top><strong>Inspector</strong>
+    <td valign=top><strong>Date</strong>
+    <td valign=top><strong>Status</strong>
+    <td valign=top><strong>Remarks</strong>
+
+  <tr>
+    <td valign=top>2.6
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6H
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>FIX
+    <td valign=top>need to change tab title to "2.6" rather than "2.7"
+  <tr>
+    <td valign=top>2.6A1
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6A2
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6A3
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6A4
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6A5
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6A6
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>FIX
+    <td valign=top>correct link but should be labeled as 'chatbox' instead
+  <tr>
+    <td valign=top>2.6A7
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6A8
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+
+
+</table>
+<p>
+
+</body>
+</html>

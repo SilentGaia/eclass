@@ -1,0 +1,117 @@
+
+<html>
+<head>
+<title>
+Inspection Test - attendance.html</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>Week 6
+<br>Inspection Test - attendance.html
+</strong>
+</font>
+</p>
+<br>
+<br>
+<br>
+<p>
+
+
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Component</strong>
+    <td valign=top><strong>Inspector</strong>
+    <td valign=top><strong>Date</strong>
+    <td valign=top><strong>Status</strong>
+    <td valign=top><strong>Remarks</strong>
+  <tr>
+    <td valign=top>2.6.2
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2H
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2P1
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2A1
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2A2
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>FIX
+    <td valign=top>link it to 2.6.3 instead
+  <tr>
+    <td valign=top>2.6.2I1
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2P2
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2I2
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2P3
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2I3
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2A1
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2A2
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>FIX
+    <td valign=top>should link to privileges
+  <tr>
+    <td valign=top>2.6.2A3
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.6.2A4
+    <td valign=top>JT
+    <td valign=top>03nov14
+    <td valign=top>FIX
+    <td valign=top>should link to functional requirements
+
+</table>
+<p>
+
+</body>
+</html>

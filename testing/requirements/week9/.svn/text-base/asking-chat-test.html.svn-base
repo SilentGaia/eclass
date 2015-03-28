@@ -1,0 +1,105 @@
+
+<html>
+<head>
+<title>
+Inspection Test - asking-chat.html</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>Week 9
+<br>Inspection Test - asking-chat.html
+</strong>
+</font>
+</p>
+<br>
+<br>
+<br>
+<p>
+
+
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Component</strong>
+    <td valign=top><strong>Inspector</strong>
+    <td valign=top><strong>Date</strong>
+    <td valign=top><strong>Status</strong>
+    <td valign=top><strong>Remarks</strong>
+  <tr>
+    <td valign=top>2.7.2
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2H
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2P1
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2I1
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2I2
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2P2
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2I3
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2P3
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2A1
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2A2
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2A3
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.7.2A4
+    <td valign=top>CD
+    <td valign=top>25nov14
+    <td valign=top>FIX
+    <td valign=top>should bring back to index
+
+</table>
+<p>
+
+</body>
+</html>

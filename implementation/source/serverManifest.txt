@@ -1,0 +1,2 @@
+Main-class: eclasstool/model/server/Server
+

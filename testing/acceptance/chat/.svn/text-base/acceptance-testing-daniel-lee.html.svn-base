@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>
+User Acceptance Testing
+</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>CSC 309 User Acceptance Testing - Chat</strong>
+</font>
+</p>
+<br>
+<br>
+<h3>
+Acceptance Test Plan - Written by Daniel Lee
+</h3>
+<p>
+<blockquote>
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Case No.</strong>
+    <td valign=top><strong>User Inputs and Commands</strong>
+    <td valign=top><strong>Expected Output</strong>
+    <td valign=top><strong>Remarks</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td valign=top><strong>Results</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <tr>
+    <td valign=top>1
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click on the "+" button next the to the "Users" button. Then select "Eric Tran" and click the "Submit" button.
+    <td valign=top>
+On the chat, click the "Users" button and user should see "Daniel Lee" and "Eric Tran" under the list of users in the chatroom.
+    <td valign=top>
+This tests chatroom's ability to add different users to a chatroom and store them correctly. 
+    <td valign=top>
+Passed. The expected output matched correctly.
+  <tr>
+    <td valign=top>2
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click the Login button and when the classroom loads, press the Chat button. Click the "Comment..." field and type in a comment such as "Testing" when the chatroom loads. Press enter to finish typing the comment.
+    <td valign=top>
+User should see the comment in the chat section above the comment field with the username and the typed in comment. 
+    <td valign=top>
+This tests the actual chatting capabilities between students in a classroom.
+    <td valign=top>
+Passed. Students can definitely post to the chatroom.
+ <tr>
+    <td valign=top>3
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start two instances of the classroom by typing java -jar classroom.jar in separate terminals. Login as Eric Tran with password as password on one classroom and login as Daniel Lee with password as password on the other classroom. Click the login button and when the classroom loads, press the Chat button on both instances. Click the "Comment..." field and type in a comment such as "Testing" when the chatroom loads on the Eric Tran instance.
+    <td valign=top>
+Click on the Daniel Lee classroom instance and then click on the chat that was open. User should see that Eric Tran has commented in the main chatroom with the comment "Testing." 
+    <td valign=top>
+This tests public interaction between students and the instructor in the E-Classroom and the java's RMI feature. It also tests our server being able to hold and send data over to the clients.
+    <td valign=top>
+Passed. When there are multiple clients of the E-Classroom open, every instance can communicate with the server to communicate with fellow clients that are open. 
+	  <tr>
+    <td valign=top>4
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start two instances of the classroom by typing java -jar classroom.jar in separate terminals. Login as Eric Tran with password as password on one classroom and login as Daniel Lee with password as password on the other classroom. Click the login button and when the classroom loads, press the Chat button on both instances. Press the "Ask Question" button on one instance. Type in "How awesome is Gene Fisher?" in the "Enter Question..." text field. Click on "All" option and then click on the "Submit" button.
+    <td valign=top>
+Under the "Classroom" chatroom, there should be a new question comment displaying "QUESTION: How awesome is Gene Fisher?" on both instances.
+    <td valign=top>
+This tests the ability to ask questions in E-Classroom across multiple clients using java's RMI.
+    <td valign=top>
+Passed. Again, clients communicate with the server properly to ask questions in the classroom.
+ <tr>
+    <td valign=top>5
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click the Login button and when the classroom loads, press the Chat button. Press the "New Chat" button.
+    <td valign=top>
+Under the list of chatrooms on the left-hand side of the chat, there should be two items listed as "Classroom" and "Classroom 2."
+    <td valign=top>
+This tests the ability to have private interactions with fellow students in class by having multiple chatrooms open.
+    <td valign=top>
+Passed. However, since private interactions are not fully implemented, students cannot actually chat with other students.
+	  <tr>
+    <td valign=top>6
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click the Login button and when the classroom loads, press the Chat button. Click the "Comment..." field and type in a comment such as "Testing in Classroom" when the chatroom loads. Press enter to finish typing the comment. Then, add a new chatroom by referring to the previous scenario and click on "Classroom 2" under the list of chatrooms when finished. Type in "Testing in Chatroom 2" in the "Comment..." field and press enter to load the comment. 
+    <td valign=top>
+User should be able to see "Testing in Classroom" in the comments section when clicking on "Classroom" under the list of chatrooms and "Testing in Chatroom 2" when clicking on "Chatroom 2" under the list of chatrooms.
+    <td valign=top>
+This tests the chatroom for storing and loading comments per chatroom and having multiple chatrooms open.
+    <td valign=top>
+Passed. Having multiple chatrooms open is easy and simple but the naming convention for new chatrooms seems boring.
+ <tr>
+    <td valign=top>7
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click the Login button and when the classroom loads, press the Chat button. Click on the "Users" button.
+    <td valign=top>
+User should see the name of the student the user logged in such as "Daniel Lee."
+    <td valign=top>
+This tests the login model being hooked up to the chat model. Only the users that are logged in are shown in the list of users in the chatroom. 
+    <td valign=top>
+Passed. List of users are initialized with users that are logged in.
+	  <tr>
+    <td valign=top>8
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start two instances of the classroom by typing java -jar classroom.jar in separate terminals. Login as Eric Tran with password as password on one classroom and login as Daniel Lee with password as password on the other classroom. Click the login button and when the classroom loads, press the Chat button on both instances. Click on the "Users" button on one instance.
+    <td valign=top>
+User should see "Daniel Lee" and "Eric Tran" under the list of users in the dialog. 
+    <td valign=top>
+This tests the login model being hooked up to the chat model as well as the server. Only the users that are logged in are shown in the list of users in the chatroom.
+    <td valign=top>
+Passed. Every client's list of users in the main chatroom shows only users currently logged on which is expected.  
+ <tr>
+    <td valign=top>9
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start two instances of the classroom by typing java -jar classroom.jar in separate terminals. Login as Eric Tran with password as password on one classroom and login as Daniel Lee with password as password on the other classroom. Click the login button and when the classroom loads, press the Chat button on both instances. Click on the "Users" button on one instance. Then, add a new chatroom by referring to scenario #5 and click on "Classroom 2" under the list of chatrooms when finished.
+    <td valign=top>
+Under the Daniel Lee instance, click on the "Users" button under the "Classroom" chatroom. User should see "Daniel Lee" and "Eric Tran." Then, click on "Chatroom 2" on the list of chatrooms and then click on the "Users" button. User should see only "Daniel Lee" on the list of users.
+    <td valign=top>
+This tests the chatroom and its ability to store various users across different chatrooms along with using java RMI.
+    <td valign=top>
+Passed. The chat is able to succesfully load different students per chatroom.
+	  <tr>
+    <td valign=top>10
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start two instances of the classroom by typing java -jar classroom.jar in separate terminals. Login as Eric Tran with password as password on one classroom and login as Daniel Lee with password as password on the other classroom. Click the login button and when the classroom loads, press the Chat button on both instances. Click on the "Users" button on one instance. Then, add a new chatroom by referring to scenario #5 and click on "Chatroom 2" under the list of chatrooms when finished. Then, add a new user, specifically "Jordan Tang," to "Chatroom 2" by referring to scenario #1.
+    <td valign=top>
+Under the Daniel Lee instance, click on the "Users" button under the "Classroom" chatroom. User should see "Daniel Lee" and "Eric Tran." Then, click on "Chatroom 2" on the list of chatrooms and then click on the "Users" button. User should see "Daniel Lee" and "Jordan Tang" on the list of users.
+    <td valign=top>
+This tests the chatroom and the adding of users to different chatrooms along with java RMI.
+    <td valign=top>
+Passed. Even if the same people are added twice, the list of users only lists the user once. This is great.
+ <tr>
+    <td valign=top>11
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click the Login button and when the classroom loads, press the Chat button. Then, add a new chat by referring to scenario #5 and then click on "Chatroom 2" to navigate to that chatroom. Then, click on the "Leave" button.
+    <td valign=top>
+Before the "Leave" button was pressed, user should have seen two chatrooms--"Classroom" and "Chatroom 2." Then, once the "Leave" button was pressed, user should have only seen the main "Classroom" under the list of chatrooms.
+    <td valign=top>
+This tests the leave feature of the chat and being able to exit private interactions. 
+    <td valign=top>
+Passed. If multiple chatrooms are open and then you leave some chatrooms, the names of the chatrooms may coincide.
+	 <tr>
+    <td valign=top>12
+    <td valign=top>
+Start the server by typing java -jar server.jar. Then, start the classroom by typing java -jar classroom.jar. Login as a student; for example, username is Daniel Lee and password is password. Click the Login button and when the classroom loads, press the Chat button. Click on the "Leave" button.
+    <td valign=top>
+User should see an error message pop up warning that the main chatroom cannot be exited.
+    <td valign=top>
+This tests error handling, public interactions in the classroom and being unable to leave the actual classroom.
+    <td valign=top>
+Passed. Works as intended. 
+</table>
+</blockquote>
+</p><p>
+</body>
+</html>

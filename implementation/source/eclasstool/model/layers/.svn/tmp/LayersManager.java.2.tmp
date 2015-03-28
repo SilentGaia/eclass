@@ -1,0 +1,138 @@
+package eclasstool.model.layers;
+import java.util.Collection;
+import java.util.ArrayList;
+import eclasstool.view.drawingtools.*;
+
+/**
+  * The LayersManager object consists of a list of Layers for a slide.  
+  *
+  * @author Tammy Kong (takong@calpoly.edu)
+  * @version 20jan15
+  *
+  */
+public class LayersManager {
+
+	/**
+	 * The collection of Layer
+	 */
+	private ArrayList<Layer> layerList;
+
+	/**
+	 * current Layer user is editing
+	 */
+	private Layer currLayer;
+	
+	/**
+	 * Toolbox for the drawingtools.
+	 */
+	private DrawingToolsUI toolbox;
+
+        public LayersManager()
+        {
+            layerList = new ArrayList<Layer>();
+            addLayer();
+        }
+
+	/**
+ 	 * The default constructor for the LayersManager Object.
+ 	 */ 
+	public LayersManager(DrawingToolsUI toolbox) {
+		layerList = new ArrayList<Layer>();
+		this.toolbox = toolbox;
+		addLayer();
+	}
+
+	/**
+	 * Adds a new layer to the collection of layers.
+	 */
+	/*@
+		requires
+                        //
+			//layerList exists
+			//
+			(layerList != null);
+
+		ensures
+                        //
+			//layerList consist of at least one Layer.
+			//
+			(layerList.size() >= 1) 
+			&&
+                        // 
+			//The given Layer is in this.layerList
+			//
+			(layerList.contains(newLayer));
+	@*/
+	public void addLayer() {
+		System.out.println("In LayersManager.addLayer.");
+		Layer newLayer = new Layer(toolbox);
+		layerList.add(newLayer);
+                currLayer = layerList.get(layerList.size() - 1);
+		System.out.println("New Layer added to Collection. Collection size: " + layerList.size());
+	}
+
+	/**
+	  * Deletes a layer from the collection of layers.
+	  */
+	/*@
+		requires
+		    //
+		    //layerList exists
+		    //
+		    (layerList != null)
+
+		    &&
+
+		    //
+		    //at least one Layer in layerList
+		    //
+		    (layerList.size() > 0)
+
+		    &&
+
+		    //
+		    //The curLayer is in the layerList
+		    //
+		    (layerList.contains(curLayer));
+
+		ensures
+			//
+			//Makes sure curLayer is removed from the layerList
+			//
+			(\forall Layer layer;
+				layerList.contains(layer) <==>
+					!layer.equals(curLayer) && \old(layerList).contains(layer));
+    @*/
+	public void deleteLayer() {
+		System.out.println("In LayersManager.deleteLayer.");
+		if(layerList.remove(currLayer))
+		{
+			System.out.println("Current layer is deleted");
+		}
+	}
+
+	/**
+	 * Obtains the Layer the user is currently viewing. 
+	 *
+	 * @return the current Layer user is viewing
+	 */
+	public Layer getCurLayer() {
+		System.out.println("In LayersManager.getCurLayer.");
+		return currLayer;
+	}
+
+	/**
+	 * Sets the currLayer to the Layer user wants to view.
+	 *
+	 * @param layerNdx index of the Layer user wants to view
+	 */
+	public void setCurLayer(int layerNdx) {
+		System.out.println("In LayersManager.setCurLayer.");
+		currLayer = layerList.get(layerNdx);
+		System.out.println("current layer is set.");
+	}
+
+	public int getListSize() {
+		return layerList.size();
+	}
+}

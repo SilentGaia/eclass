@@ -1,0 +1,145 @@
+package eclasstool.view.drawingtools;
+import javax.swing.*;
+
+import java.util.*;
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
+
+import eclasstool.model.drawingtools.*;
+
+/****
+ * Class Canvas is a JFrame that is the general canvas for each layer
+ * and provides methods that handles the mouse events on the canvas 
+ * based on the selected Drawing Tool. 
+ *
+ * @author Carmen <cadang@calpoly.edu>
+ */
+
+public class Canvas extends javax.swing.JFrame {    
+	/**
+     * Creates new JFrame Canvas.
+     * @param toolbox Default toolbox passed in in order to be used
+     * in methods handling mouse events.
+     */
+    public Canvas(DrawingToolsUI toolbox) {
+    	//setVisible(true);
+        initComponents();
+        this.toolbox = toolbox;
+        drawing = new Drawing();	
+        graphics = (Graphics2D) getGraphics();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    /**
+     * Called when mouse is click, determines which tool is selected
+     * in the overall tool box, then calls respective function based
+     * on the action.
+     * @param evt MouseEvent performed.
+     */
+    private void formMouseClicked(java.awt.event.MouseEvent evt) { 
+
+        if(toolbox.selectedTool().equals("Shape"))  {
+        	
+        	shapeEvents(evt);
+        }
+    }
+    
+    /**
+     * Called when the mouse is dragged, determines which tool is
+     * selected and then calls the respective method based on the 
+     * action.
+     * 
+     * @param evt MouseEvent performed.
+     */
+    private void formMouseDragged(java.awt.event.MouseEvent evt)  {
+    	if(toolbox.selectedTool().equals("Brush"))  {
+    		brushEvents(evt);
+    	}
+    }
+    
+    /**
+     * Called when the Drawing Tool is selected, and draws or erases
+     * based on whether the Brush Tool or Eraser Tool is selected.
+     * @param evt MouseEven performed.
+     */
+    private void brushEvents(java.awt.event.MouseEvent evt)  {
+    	if(toolbox.getDrawingToolbar().getSelected().equals("Brush"))  {
+    		Random rand = new Random();
+    		float r = rand.nextFloat();
+    		float g = rand.nextFloat();
+    		float b = rand.nextFloat();
+    		//graphics.setBackground(new Color(r, g, b));
+    		graphics.setColor(Color.blue);
+    		graphics.draw(new Ellipse2D.Double(evt.getX(), evt.getY(), 20.0, 20.0));
+    		//getGraphics().fillOval(evt.getX(), evt.getY(), 20, 20);
+    		System.out.println(evt.getX() + ", " + evt.getY());
+    	}
+    }
+    /**
+     * Reads in the mouse event, determines which shape tool
+     * is selected, and performs an action based on the selected
+     * tool and event.
+     * 
+     * @param evt Current mouse event being performed.
+     * 
+     * Pre: Requires shape tool to be selected.
+     */
+    private void shapeEvents(java.awt.event.MouseEvent evt)  {
+    	if(toolbox.getShapeToolbar().getSelected().equals("Circle"))  {
+
+    		getGraphics().setColor(Color.blue);
+    		graphics.fillOval(evt.getX(), evt.getY(), 20, 20);
+    		//getGraphics().fillOval(evt.getX(), evt.getY(), 20, 20);
+    		System.out.println(evt.getX() + ", " + evt.getY());
+    	}
+    	else if(toolbox.getShapeToolbar().getSelected().equals("Rectangle"))  {
+    		getGraphics().setColor(Color.blue);
+    		getGraphics().fillRect(evt.getX(), evt.getY(), 10, 10);
+    		System.out.println(evt.getX() + ", " + evt.getY());
+    	}
+    	else if(toolbox.getShapeToolbar().getSelected().equals("Line"))  {
+    		getGraphics().setColor(Color.blue);
+    		getGraphics().drawLine(0, 0, evt.getX(), evt.getY());
+    		System.out.println(evt.getX() + ", " + evt.getY());
+    	}
+    }
+    
+    /** Toolbox to be used to determine which tool is selected during
+     *  mouse event. 
+     */
+	protected DrawingToolsUI toolbox; 
+	/** Model of the Drawing that is drawn on the canvas. */
+	protected Drawing drawing; 
+	protected Graphics2D graphics;
+	
+}

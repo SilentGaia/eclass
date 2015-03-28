@@ -1,0 +1,94 @@
+
+<html>
+<head>
+<title>
+Inspection Test - text.html</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>Week 10
+<br>Inspection Test - text.html
+</strong>
+</font>
+</p>
+<br>
+<br>
+<br>
+<p>
+
+
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Component</strong>
+    <td valign=top><strong>Inspector</strong>
+    <td valign=top><strong>Date</strong>
+    <td valign=top><strong>Status</strong>
+    <td valign=top><strong>Remarks</strong>
+  <tr>
+    <td valign=top>2.5.5
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5H
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>change "2.8.2" to "2.5.5"
+  <tr>
+    <td valign=top>2.5.5P1
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5I1
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5P2
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5I2
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5A1
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5A2
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5A3
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.5.5A4
+    <td valign=top>DL
+    <td valign=top>11dec14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+
+  
+</table>
+<p>
+
+</body>
+</html>

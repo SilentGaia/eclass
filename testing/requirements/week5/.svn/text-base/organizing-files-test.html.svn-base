@@ -1,0 +1,97 @@
+
+<html>
+<head>
+<title>
+Inspection Test - organizing-files.html</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>Week 5
+<br>Inspection Test - organizing-files.html
+</strong>
+</font>
+</p>
+<br>
+<br>
+<br>
+<p>
+
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Component</strong>
+    <td valign=top><strong>Inspector</strong>
+    <td valign=top><strong>Date</strong>
+    <td valign=top><strong>Status</strong>
+    <td valign=top><strong>Remarks</strong>
+  <tr>
+    <td valign=top>2.4.3
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.4.3H
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>change "2.6.2" to "2.4.3"
+  <tr>
+    <td valign=top>2.4.3P1
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.4.3I1
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>needs minimizing button
+  <tr>
+    <td valign=top>2.4.3I2
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>needs minimizing button
+  <tr>
+    <td valign=top>2.4.3P2
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.4.3I3
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>broken link
+  <tr>
+    <td valign=top>2.4.3A1
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>DONE
+    <td valign=top>&nbsp;
+  <tr>
+    <td valign=top>2.4.3A2
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>needs to go to 2.4.4 on Next
+  <tr>
+    <td valign=top>2.4.3A3
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>goes back to 2.4
+  <tr>
+    <td valign=top>2.4.3A4
+    <td valign=top>TK
+    <td valign=top>24oct14
+    <td valign=top>FIX
+    <td valign=top>goes back up to functional requirements
+</table>
+<p>
+
+</body>
+</html>

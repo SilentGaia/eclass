@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>
+User Acceptance Testing
+</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>CSC 309 User Acceptance Testing</strong>
+</font>
+</p>
+<br>
+<br>
+<h3>
+Acceptance Test Plan For Login by Eric Tran 
+</h3>
+The acceptance test plan for the login of the E-Class. 
+<p> 
+<blockquote>
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Case No.</strong>
+    <td valign=top><strong>User Inputs and Commands</strong>
+    <td valign=top><strong>Expected Output</strong>
+    <td valign=top><strong>Remarks</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td valign=top><strong>Results</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <tr>
+    <td valign=top>1
+    <td valign=top>
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 On startup of E-Class tool, login dialog displays. User clicks on register.
+	 <td valign=top>
+	 Register dialog pops up, with name and password field empty. 
+    <td valign=top>
+	 Tests visibilty and display of register window. 
+    <td valign=top>
+    Pass. 
+  <tr>
+    <td valign=top>2
+    <td valign=top>   
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 On startup of E-Class tool, login dialog displays. User enters "Gene Fisher" into username field.
+	 User enters "password" into password field. User clicks on "login" button.
+    <td valign=top>   
+	 Console prints some E-Class startup information. Login dialog closes. Main window for E-Class pops up. 
+    <td valign=top>  
+	 Tests the user authentication process of the E-Class tool. 
+    <td valign=top>
+	 Pass. 
+ <tr>
+    <td valign=top>3
+    <td valign=top> 
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 On startup of E-Class tool, login dialog displays. User clicks on "Guest" button. 
+    <td valign=top>
+	 Console prints some E-Class startup information. Login dialog closes. Main window for E-Class pops up. 
+    <td valign=top> 
+	 Tests guest functionality of E-Class tool. 
+    <td valign=top>
+	 Pass. 
+<tr>
+    <td valign=top>4
+    <td valign=top> 
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 On startup of E-Class tool, login dialog displays. User enters "George Clooney" into username field.
+	 User enters "password" into password field. User clicks on "login" button.
+    <td valign=top>  
+	 Invalid user dialog pops up. Username field and password field are cleared. 
+    <td valign=top> 
+	 Tests the user authentication process of the E-Class tool. 
+    <td valign=top>
+	 Pass. 
+ <tr>
+    <td valign=top>5
+    <td valign=top> 
+	 Start server by typing "java -jar server.jar" in terminal or command prompt. 
+	 Start E-Class by typing "java -jar classroom.jar" in terminal or command prompt.
+	 On startup of E-Class tool, login dialog displays. User clicks on register.
+	 User enters "George Clooney" into the name field.
+	 User enters "password" into password field.
+	 User enters "password2" into confirm field. 
+	 User presses "register" button. 
+    <td valign=top> 
+	 Invalid registration dialog pops up, displaying "Passwords do not match." 
+    <td valign=top>
+	 Tests registration process of the E-Class tool. 
+    <td valign=top>
+	 Pass. 
+ <tr>
+
+</table>
+</blockquote>
+</p><p>
+</body>
+</html>

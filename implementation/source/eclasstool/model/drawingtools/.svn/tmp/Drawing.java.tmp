@@ -1,0 +1,159 @@
+/**
+ * Class Drawing models the current drawing composition and holds
+ * shapes, notes, and text.
+ * 
+ * @author Carmen Dang (cadang@calpoly.edu)
+ */
+package eclasstool.model.drawingtools;
+import java.awt.Color;
+import java.util.*;
+
+
+/**
+ * Drawing is an implementation of the tool used to draw on the lecture slides for the E-classroom.
+ */
+public class Drawing {
+    /**
+     * List of Shapes that compose the Drawing.
+     */
+<<<<<<< .mine
+   private ArrayList <Shape> drawing;
+   private ArrayList <Note> notes;
+   private ArrayList <Text> text;
+  
+   public Drawing() {
+	   drawing = new ArrayList<Shape>();
+	   notes = new ArrayList<Note>();
+	   text = new ArrayList<Text>();
+   }
+   
+   /**
+=======
+    private ArrayList<Shape> drawing;
+
+    public Drawing()  {
+        drawing = new ArrayList<Shape>();
+    }
+
+    /**
+>>>>>>> .r543
+     * Adds the shape to the List and returns true if the shape is successfully
+     * added, else, returns False.
+     * @param shape Shape object to be added.
+     */
+    /*@
+      requires
+    //
+    // The shape being added has to exist.
+    //
+    shape != null;
+    ensures
+    //
+    // Returns true if the shape was added, returns false if the shape was
+    // not added.
+    //
+    (\result == (shape != null));
+    @*/
+    public boolean add(Shape shape)  {
+        drawing.add(shape);
+        System.out.println("In Drawing.addShape");
+        return true;
+    }
+    public ArrayList<Shape> getDrawingArrList()  {
+        return drawing;
+    }
+
+    public int findShape(Shape shape)  {
+        return drawing.indexOf(shape);
+    }
+
+    public Shape get(int index)  {
+        return drawing.get(index);
+    }
+
+    public int size()  {
+        return drawing.size();
+    }
+
+    /**
+     * Deletes the shape from the List.
+     * @param shape Shape object to be deleted.
+     * @return Returns whether or not the shape was deleted.
+     */
+    /*@
+      requires 
+    //
+    // The shape being deleted has to exist.
+    //
+    shape != null;
+    ensures
+    //
+    // The shape is deleted if it is found in the list of shapes.
+    //
+    drawing.contains(shape);
+    @*/
+    public boolean deleteShape(Shape shape)  {
+        drawing.remove(shape);
+        System.out.println("In Shape.deleteShape");
+        return true;
+    }
+
+    public boolean moveShape(Shape shape, int x_pos, int y_pos)  {
+        int index = drawing.indexOf(shape);
+        if(index == -1)  {
+            return false;
+        }
+        if(x_pos < 0 || y_pos < 0)  {
+            return false;
+        }
+        drawing.get(index).move(x_pos, y_pos);
+
+        return true;
+    }
+
+    public boolean setHeight(Shape shape, int height)  {
+        int index = drawing.indexOf(shape);
+        if(index == -1)  {
+            return false;
+        }
+        if(height < 0)  {
+            return false;
+        }
+        drawing.get(index).setHeight(height);
+        return true;   
+    }
+
+
+    public boolean setWidth(Shape shape, int width)  {
+        int index = drawing.indexOf(shape);
+        if(index == -1)  {
+            return false;
+        }
+        if(width < 0)  {
+            return false;
+        }
+        drawing.get(index).setWidth(width);
+        return true;   
+    }
+    
+    public boolean setColor(Shape shape, Color color)  {
+        int index = drawing.indexOf(shape);
+        if(index == -1)  {
+            return false;
+        }
+        drawing.get(index).setColor(color);
+        return true;
+    }
+    
+    public Shape getShape(Shape shape)  {
+    	return drawing.get(drawing.indexOf(shape));
+    }
+    
+    public String findGetType(Shape shape)  {
+    	int index = drawing.indexOf(shape);
+    	if(index == -1)  {
+    		return null;
+    	}
+    	return shape.getClass().getSimpleName();
+    }
+}

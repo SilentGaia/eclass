@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>
+User Acceptance Testing
+</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>CSC 309 User Acceptance Testing</strong>
+</font>
+</p>
+<br>
+<br>
+<h3>
+Acceptance Test Plan For Layers by Tammy Kong
+</h3>
+<p>
+The acceptance test plan for the layers of the E-Class.
+<blockquote>
+<table align=center border=1 cellpadding=4>
+  <tr>
+    <td valign=top><strong>Case No.</strong>
+    <td valign=top><strong>User Inputs and Commands</strong>
+    <td valign=top><strong>Expected Output</strong>
+    <td valign=top><strong>Remarks</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td valign=top><strong>Results</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <tr>
+    <td valign=top>1
+    <td valign=top>
+Start the server by typing java -jar server.jar. 
+<br>Then, start the classroom by typing java -jar classroom.jar. 
+<br>Login as a student; for example, username is "Tammy Kong" and password is "password".
+<br> Click the "layers" button at the bottom of the taskbar in the E-Class tool. 
+
+
+    <td valign=top>
+User sees the Layers Manager on top of the main E-Class window. The Layers Manager is initalized with one layer in the private list and one layer in the public list.
+    <td valign=top>
+Tests initalization of Layers Manager.
+    <td valign=top>
+Pass 
+  <tr>
+    <td valign=top>2
+    <td valign=top>   
+
+ <br>Following the previous instructions, click the add layer button on the bottom left of the Layers Manager component.
+
+    <td valign=top>   User sees a new Layer is added to the Public Layer and the new layer is also selected with the label "Layer 2"
+    <td valign=top>  Tests the ability to add a new layer to the public layer list.
+    <td valign=top>Pass
+
+
+
+ <tr>
+    <td valign=top>3
+    <td valign=top>   
+
+<br>Following the previous instructions, click the eye button at the bottom far left.
+    <td valign=top>  User sees the selected layer, Layer 2, turns gray.
+    <td valign=top>  Tests the ability to make the layer invisible.
+    <td valign=top> Fail. Was not implemented. 
+
+	  <tr>
+    <td valign=top>4
+    <td valign=top>   Following the previous instructions, click the delete layer button at the bottom most right button. 
+    <br> Click onto the public layer JList. 
+    <td valign=top>   User sees the selected layer, Layer 2, in Public Layer List deleted.
+    <td valign=top>   Tests the ability to delete a layer.
+    <td valign=top> Pass, only if user clicks on the JList after. Issues with repainting.
+ <tr>
+    <td valign=top>5
+    <td valign=top>   Following the previous instructions, select the layer inside of Private Layers
+    <td valign=top>   User sees the blue outline surrounding the newly selected layer.
+    <td valign=top>   Tests the ability to change from two different JLists.
+    <td valign=top> Pass
+	  <tr>
+    <td valign=top>6
+    <td valign=top>   Following the previous instructions, click the add layer button on the bottom left of the Layers Manager component.
+    <td valign=top>   User sees a new Layer is added to the Private Layer and the new layer is also selected with the label "Layer 2".
+    <td valign=top>   Tests the ability to change from JList and correctly add Layer to selected JList.
+    <td valign=top> Pass.
+ <tr>
+    <td valign=top>7
+    <td valign=top>   Following the previous instructions, click the delete layer button at the bottom most right button.
+    <br> Click onto the private layer JList.
+    <td valign=top>   User sees the selected layer, Layer 2, in Private Layer List deleted.
+    <td valign=top>   Tests the ability to delete a layer after selecting a different JList.
+    <td valign=top> Pass, only if user clicks on the JList after. Issues with repainting.
+
+<tr>
+    <td valign=top> 7
+    <td valign=top> Following the previous instructions, click the 'x' button on the top left/right corner.
+    <br> Click the 'layer' button on taskbar again.
+    <td valign=top> User should see the layer manager close. Then after clicking layers on task manager, should display the same amount of layers.
+    <td valign=top> Tests demostrates that there is only one instance of layers manager.
+    <td valign=top> Pass.
+
+</table>
+</blockquote>
+</p><p>
+</body>
+</html>

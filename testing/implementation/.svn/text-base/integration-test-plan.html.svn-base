@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>
+E-Classroom Tool Integration Test Plan
+</title>
+</head>
+<body bgcolor=white>
+<p align=center>
+<font size=+2>
+<strong>E-Classroom Tool Integration Test Plan</strong>
+</font>
+</p>
+
+<br>
+After the classes in each package are independently tested with <tt>taskbar</tt>
+and <tt>classroom</tt> stubs, perform integration testing in the following phases:
+<ol type=1>
+<p>
+<li>
+Integrate the <tt>presentation</tt> package with the <tt>classroom</tt> package and
+rerun the class tests in the <tt>presentation</tt> package.
+<p>
+<li>
+Add the <tt>layers</tt> package to the integrated <tt>presentation + classroom</tt>
+packages; rerun the class tests in the <tt>presentation</tt> and <tt>layers</tt>
+packages.
+<p>
+<li>
+Add the <tt>taskbar</tt> package to the integrated <tt>presentation + layers +
+classroom</tt>; rerun the class tests in the <tt>presentation</tt>, <tt>layers</tt>, 
+and <tt>taskbar</tt> packages.
+<p>
+<li>
+Integrate the <tt>classroom</tt> and <tt>classroom.rmi</tt> packages and rerun the
+class tests in the <tt>classroom</tt> package.
+<p>
+<li>
+Add the <tt>classroom.rmi</tt> package to the integrated <tt>presentation + layers 
++ taskbar + classroom</tt>; rerun the class tests in the <tt>presentation</tt>, 
+<tt>layers</tt>, and <tt>taskbar</tt> packages.
+<p>
+<li>
+Add the <tt>drawingtools</tt> package to the integrated <tt>presentation + layers 
++ taskbar + classroom + rmi</tt>; rerun the class tests in the <tt>presentation</tt>, 
+<tt>layers</tt>, <tt>taskbar</tt>, and <tt>drawingtools</tt> packages.
+<p>
+<li>
+Add the <tt>roster</tt> package to the integrated <tt>presentation + layers + taskbar 
++ drawingtools + classroom + rmi</tt>; rerun the class tests in the <tt>presentation</tt>,
+<tt>layers</tt>, <tt>taskbar</tt>, <tt>drawingtools</tt>, and <tt>roster</tt> packages.
+<p>
+<li>
+Add the <tt>chat</tt> package to the integrated <tt>presentation + layers + taskbar 
++ drawingtools + roster + classroom + rmi</tt>; rerun class tests in the
+<tt>presentation</tt>, <tt>layers</tt>, <tt>taskbar</tt>, <tt>drawingtools</tt>,
+<tt>roster</tt>, and <tt>chat</tt> packages.
+<p>
+<li>
+Add the top-level <tt>eclasstool</tt> classes to the integrated packages and run
+the top-level class tests, which in turn run the class tests in each package.
+</ol>
+</body>
+</html>
